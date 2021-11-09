@@ -13,6 +13,11 @@
       src="https://kit.fontawesome.com/ac7c2837b9.js"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
     <title>SILFEN PROM</title>
   </head>
@@ -97,7 +102,31 @@
         <h2>OUR NEW COLLECTION AWAITS TO BE DISCOVERED</h2>
       </section>
 
-      <section id="intro">
+      <section class="intro">
+        <h1>PROM IS HERE</h1>
+        <p>
+          We bring you new, fun and stylish bags to make you feel like the
+          soulof the New Year’s party!
+        </p>
+      </section>
+
+      <div class="swiper" style="padding: 4rem 0 1rem 0">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <img class="swiper-slide" src="assets/intro_1.jpg" alt="" />
+          <img class="swiper-slide" src="assets/intro_2.jpg" alt="" />
+          <img class="swiper-slide" src="assets/intro_3.jpg" alt="" />
+          <img class="swiper-slide" src="assets/intro_4.jpg" alt="" />
+          <img class="swiper-slide" src="assets/intro_5.jpg" alt="" />
+          <img class="swiper-slide" src="assets/intro_1.jpg" alt="" />
+          <img class="swiper-slide" src="assets/intro_2.jpg" alt="" />
+        </div>
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
+
+      <section class="intro">
         <h1>PROM IS HERE</h1>
         <p>
           We bring you new, fun and stylish bags to make you feel like the
@@ -105,5 +134,7 @@
         </p>
       </section>
     </main>
+
+    <script src="scripts/index.js"></script>
   </body>
 </html>

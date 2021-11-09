@@ -184,7 +184,7 @@ p {
   }
 }
 
-#intro {
+.intro {
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -193,8 +193,45 @@ p {
   margin: 3rem 0 3rem 0;
 }
 
-#intro p {
+.intro p {
   text-align: center;
   max-width: 25rem;
+}
+
+.swiper {
+  height: 30rem;
+}
+
+.swiper .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid #4cc9f0;
+}
+
+.swiper .swiper-scrollbar-drag {
+  background: #4cc9f0;
+}
+
+.swiper img:first-of-type {
+  margin-top: -1.2rem;
+}
+
+.swiper img:nth-of-type(2) {
+  margin-top: -3rem;
+}
+
+.swiper img:nth-of-type(3) {
+  margin-top: -2rem;
+}
+
+.swiper img:nth-of-type(5) {
+  margin-top: -1.2rem;
+}
+
+.swiper img:nth-of-type(7) {
+  margin-top: -2.5rem;
 }
 /*# sourceMappingURL=style.css.map */
