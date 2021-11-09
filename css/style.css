@@ -184,7 +184,7 @@ p {
   }
 }
 
-.intro {
+#intro {
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -193,7 +193,7 @@ p {
   margin: 3rem 0 3rem 0;
 }
 
-.intro p {
+#intro p {
   text-align: center;
   max-width: 25rem;
 }
@@ -206,6 +206,8 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-image: url("/assets/intro_1.jpg");
+  background-repeat: no-repeat;
   -o-object-fit: cover;
      object-fit: cover;
   border: 2px solid #4cc9f0;
@@ -233,5 +235,13 @@ p {
 
 .swiper img:nth-of-type(7) {
   margin-top: -2.5rem;
+}
+
+#featured {
+  margin-top: 4rem;
+}
+
+#featured img {
+  width: 50%;
 }
 /*# sourceMappingURL=style.css.map */
