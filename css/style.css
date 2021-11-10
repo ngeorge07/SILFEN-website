@@ -97,18 +97,25 @@ h1 {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-size: 2.5rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  text-align: center;
 }
 
 h2 {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-size: 2.5rem;
+}
+
+p {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+}
+
+#hero-slider {
+  display: -ms-grid;
+  display: grid;
+}
+
+#hero-slider h2 {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -122,16 +129,6 @@ h2 {
   grid-area: 1 / 1 / 2 / 2;
   color: white;
   max-width: 40rem;
-}
-
-p {
-  font-family: "Manrope", sans-serif;
-  font-weight: 400;
-}
-
-#hero-slider {
-  display: -ms-grid;
-  display: grid;
 }
 
 #hero-slider img {
@@ -150,6 +147,7 @@ p {
   grid-area: 1 / 1 / 2 / 2;
   overflow: hidden;
   height: 38rem;
+  z-index: -1;
 }
 
 #hero-slider .slide-track {
@@ -293,10 +291,26 @@ p {
 }
 
 #featured {
-  margin-top: 4rem;
+  margin: 4rem auto 4rem auto;
+  max-width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #featured img {
-  width: 50%;
+  width: 40%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#featured #featured-text {
+  width: 60%;
+}
+
+@media only screen and (max-width: 740px) {
+  #featured-text {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
