@@ -121,7 +121,6 @@ h2 {
   -ms-grid-column-span: 1;
   grid-area: 1 / 1 / 2 / 2;
   color: white;
-  z-index: 1;
   max-width: 40rem;
 }
 
@@ -206,35 +205,91 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-image: url("/assets/intro_1.jpg");
-  background-repeat: no-repeat;
-  -o-object-fit: cover;
-     object-fit: cover;
   border: 2px solid #4cc9f0;
+}
+
+.swiper .swiper-slide:first-of-type,
+.swiper .swiper-slide:nth-of-type(5) {
+  background-image: url("../assets/intro_1.jpg");
+  background-size: cover;
+  margin-top: -1.2rem;
+}
+
+.swiper .swiper-slide:nth-of-type(2) {
+  background-image: url("../assets/intro_2.jpg");
+  background-size: cover;
+  margin-top: -3rem;
+}
+
+.swiper .swiper-slide:nth-of-type(3) {
+  background-image: url("../assets/intro_3.jpg");
+  background-size: cover;
+  margin-top: -2rem;
+}
+
+.swiper .swiper-slide:nth-of-type(4) {
+  background-image: url("../assets/intro_4.jpg");
+  background-size: cover;
+}
+
+.swiper .swiper-slide:nth-of-type(6) {
+  background-image: url("../assets/intro_5.jpg");
+  background-size: cover;
+}
+
+.swiper .swiper-slide:nth-of-type(7) {
+  background-image: url("../assets/intro_2.jpg");
+  background-size: cover;
+  margin-top: -2.5rem;
 }
 
 .swiper .swiper-scrollbar-drag {
   background: #4cc9f0;
 }
 
-.swiper img:first-of-type {
-  margin-top: -1.2rem;
+.swiper a:hover::after {
+  content: "SEE DETAILS";
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  -webkit-animation: 0.3s cubic-bezier(0.02, 0.36, 0.23, 0.97) slidein;
+          animation: 0.3s cubic-bezier(0.02, 0.36, 0.23, 0.97) slidein;
 }
 
-.swiper img:nth-of-type(2) {
-  margin-top: -3rem;
+@-webkit-keyframes slidein {
+  from {
+    opacity: 0;
+    height: 0%;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
+  }
 }
 
-.swiper img:nth-of-type(3) {
-  margin-top: -2rem;
-}
-
-.swiper img:nth-of-type(5) {
-  margin-top: -1.2rem;
-}
-
-.swiper img:nth-of-type(7) {
-  margin-top: -2.5rem;
+@keyframes slidein {
+  from {
+    opacity: 0;
+    height: 0%;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
+  }
 }
 
 #featured {
