@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Manrope&family=Roboto:wght@300;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Manrope:wght@400;700&family=Roboto:wght@300;400;900&display=swap");
 
 * {
   margin: 0;
@@ -15,6 +15,11 @@
 @mixin paragraph {
   font-family: "Manrope", sans-serif;
   font-weight: 400;
+}
+
+@mixin cta {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
 }
 
 a {
@@ -242,7 +247,7 @@ p {
   #featured-text {
     display: grid;
     grid-template-rows: 0.1fr 0.6fr 0.5fr 2.5fr 0.5fr;
-    grid-template-columns: 0.5fr 1fr;
+    grid-template-columns: 0.6fr 1fr;
 
     div:first-of-type {
       font-family: "Roboto", sans-serif;
@@ -264,11 +269,84 @@ p {
       grid-area: 4 / 1 / 5 / 3;
       opacity: 0.65;
     }
+
+    button {
+      @include cta();
+      font-size: 1.1rem;
+      border-radius: 1.5rem;
+      border: none;
+      background-color: #2f4471;
+      color: white;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    button:active {
+      box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+        rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    }
   }
 }
 
-@media only screen and (max-width: 740px) {
-  #featured-text {
-    display: none;
+/*************TABLET VIEW*************/
+@media only screen and (max-width: 850px) {
+  #featured {
+    width: 40rem;
+
+    #featured-text {
+      h2 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      button {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
+/*************MOBILE VIEW*************/
+@media only screen and (max-width: 685px) {
+  #featured {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 80%;
+    margin-right: auto;
+
+    img {
+      width: 20rem;
+    }
+
+    #featured-text {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        display: none;
+      }
+
+      div:nth-of-type(2) {
+        align-self: center;
+        margin-top: 0.5rem;
+      }
+
+      button {
+        padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+        width: 50%;
+        align-self: center;
+        margin-top: 1.5rem;
+      }
+    }
   }
 }
