@@ -241,7 +241,7 @@
         </div>
 
         <div class="sf" id="filter">
-          <h5>Material</h5>
+          <h5>MATERIAL</h5>
           <div class="c1r2">
             <label for="material1">Vegan leather</label>
             <input
@@ -249,6 +249,7 @@
               id="material1"
               value="vegan"
               name="material"
+              onclick="showRemoveFilter();"
               autocomplete="off"
             />
           </div>
@@ -260,11 +261,12 @@
               id="material2"
               value="rpet"
               name="material"
+              onclick="showRemoveFilter();"
               autocomplete="off"
             />
           </div>
 
-          <h5>Price</h5>
+          <h5>PRICE</h5>
           <div class="c2r2">
             <label for="price1">DKK 100 - DKK 200</label>
             <input
@@ -272,6 +274,7 @@
               id="price1"
               value="cheap"
               name="price"
+              onclick="showRemoveFilter();"
               autocomplete="off"
             />
           </div>
@@ -283,6 +286,7 @@
               id="price2"
               value="medium"
               name="price"
+              onclick="showRemoveFilter();"
               autocomplete="off"
             />
           </div>
@@ -291,7 +295,7 @@
         </div>
 
         <div class="sf" id="sort">
-          <h5>Name</h5>
+          <h5>BY NAME</h5>
           <div class="c1r2">
             <label for="a-z">A to Z</label>
             <input
@@ -299,6 +303,7 @@
               id="a-z"
               value="a-z"
               name="name"
+              onclick="showRemoveSort();"
               autocomplete="off"
             />
           </div>
@@ -310,11 +315,12 @@
               id="z-a"
               value="z-a"
               name="name"
+              onclick="showRemoveSort();"
               autocomplete="off"
             />
           </div>
 
-          <h5>Price</h5>
+          <h5>BY PRICE</h5>
           <div class="c2r2">
             <label for="l-h">LOW to HIGH</label>
             <input
@@ -322,6 +328,7 @@
               id="l-h"
               value="l-h"
               name="price-sort"
+              onclick="showRemoveSort();"
               autocomplete="off"
             />
           </div>
@@ -333,6 +340,7 @@
               id="h-l"
               value="h-l"
               name="price-sort"
+              onclick="showRemoveSort();"
               autocomplete="off"
             />
           </div>

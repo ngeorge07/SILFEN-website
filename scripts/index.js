@@ -34,64 +34,86 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+function burgerMenu() {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
 
-hamburger.addEventListener("click", mobileMenu);
+  hamburger.addEventListener("click", mobileMenu);
 
-function mobileMenu() {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-}
-
-const removeFilter = document.querySelector("#remove-filter");
-const removeSort = document.querySelector("#remove-sort");
-
-removeFilter.addEventListener("click", () => {
-  const filterInputs = document
-    .querySelector("#filter")
-    .querySelectorAll("input");
-  console.log(filterInputs);
-  filterInputs.forEach((e) => {
-    if (e.checked) {
-      e.checked = false;
-    }
-  });
-});
-
-removeSort.addEventListener("click", () => {
-  const sortInputs = document.querySelector("#sort").querySelectorAll("input");
-  console.log(sortInputs);
-  sortInputs.forEach((e) => {
-    if (e.checked) {
-      e.checked = false;
-    }
-  });
-});
-
-const filterButton = document
-  .querySelector("#options")
-  .querySelector("button:first-of-type");
-
-const sortButton = document
-  .querySelector("#options")
-  .querySelector("button:nth-of-type(2");
-
-filterButton.addEventListener("click", filterOpen);
-sortButton.addEventListener("click", sortOpen);
-
-function filterOpen() {
-  if (document.querySelector("#sort").classList[1] === "active") {
-    document.querySelector("#sort").classList.remove("active");
+  function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
   }
-  document.querySelector("#filter").classList.toggle("active");
 }
 
-sortButton.addEventListener("click", sortOpen);
+function sfButtons() {
+  const filterButton = document
+    .querySelector("#options")
+    .querySelector("button:first-of-type");
 
-function sortOpen() {
-  if (document.querySelector("#filter").classList[1] === "active") {
-    document.querySelector("#filter").classList.remove("active");
+  const sortButton = document
+    .querySelector("#options")
+    .querySelector("button:nth-of-type(2");
+
+  filterButton.addEventListener("click", filterOpen);
+  sortButton.addEventListener("click", sortOpen);
+
+  function filterOpen() {
+    if (document.querySelector("#sort").classList[1] === "active") {
+      document.querySelector("#sort").classList.remove("active");
+    }
+    document.querySelector("#filter").classList.toggle("active");
   }
-  document.querySelector("#sort").classList.toggle("active");
+
+  function sortOpen() {
+    if (document.querySelector("#filter").classList[1] === "active") {
+      document.querySelector("#filter").classList.remove("active");
+    }
+    document.querySelector("#sort").classList.toggle("active");
+  }
 }
+
+function removeSf() {
+  const removeFilter = document.querySelector("#remove-filter");
+  const removeSort = document.querySelector("#remove-sort");
+
+  removeFilter.addEventListener("click", () => {
+    const filterInputs = document
+      .querySelector("#filter")
+      .querySelectorAll("input");
+    console.log(filterInputs);
+    filterInputs.forEach((e) => {
+      if (e.checked) {
+        e.checked = false;
+        removeFilter.style.display = "none";
+      }
+    });
+  });
+
+  removeSort.addEventListener("click", () => {
+    const sortInputs = document
+      .querySelector("#sort")
+      .querySelectorAll("input");
+    console.log(sortInputs);
+    sortInputs.forEach((e) => {
+      if (e.checked) {
+        e.checked = false;
+        removeFilter.style.display = "none";
+      }
+    });
+  });
+}
+
+function showRemoveFilter() {
+  const removeFilter = document.querySelector("#remove-filter");
+  removeFilter.style.display = "block";
+}
+
+function showRemoveSort() {
+  const removeFilter = document.querySelector("#remove-sort");
+  removeFilter.style.display = "block";
+}
+
+burgerMenu();
+sfButtons();
+removeSf();
