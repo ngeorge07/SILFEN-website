@@ -44,12 +44,25 @@ function mobileMenu() {
   navMenu.classList.toggle("active");
 }
 
-const remove = document.querySelector(".remove");
-remove.addEventListener("click", () => {
-  const inputs = document
-    .querySelector(".filter-opt")
+const removeFilter = document.querySelector("#remove-filter");
+const removeSort = document.querySelector("#remove-sort");
+
+removeFilter.addEventListener("click", () => {
+  const filterInputs = document
+    .querySelector("#filter")
     .querySelectorAll("input");
-  inputs.forEach((e) => {
+  console.log(filterInputs);
+  filterInputs.forEach((e) => {
+    if (e.checked) {
+      e.checked = false;
+    }
+  });
+});
+
+removeSort.addEventListener("click", () => {
+  const sortInputs = document.querySelector("#sort").querySelectorAll("input");
+  console.log(sortInputs);
+  sortInputs.forEach((e) => {
     if (e.checked) {
       e.checked = false;
     }
@@ -65,19 +78,20 @@ const sortButton = document
   .querySelector("button:nth-of-type(2");
 
 filterButton.addEventListener("click", filterOpen);
+sortButton.addEventListener("click", sortOpen);
 
 function filterOpen() {
-  if (document.querySelector(".sort-opt").classList[1] === "active") {
-    document.querySelector(".sort-opt").classList.remove("active");
+  if (document.querySelector("#sort").classList[1] === "active") {
+    document.querySelector("#sort").classList.remove("active");
   }
-  document.querySelector(".filter-opt").classList.toggle("active");
+  document.querySelector("#filter").classList.toggle("active");
 }
 
 sortButton.addEventListener("click", sortOpen);
 
 function sortOpen() {
-  if (document.querySelector(".filter-opt").classList[1] === "active") {
-    document.querySelector(".filter-opt").classList.remove("active");
+  if (document.querySelector("#filter").classList[1] === "active") {
+    document.querySelector("#filter").classList.remove("active");
   }
-  document.querySelector(".sort-opt").classList.toggle("active");
+  document.querySelector("#sort").classList.toggle("active");
 }

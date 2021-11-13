@@ -240,51 +240,9 @@
           </button>
         </div>
 
-        <div class="filter-opt">
+        <div class="sf" id="filter">
           <h5>Material</h5>
-          <input
-            type="radio"
-            id="material1"
-            value="vegan"
-            name="material"
-            autocomplete="off"
-          />
-          <label for="material1">Vegan leather</label>
-
-          <input
-            type="radio"
-            id="material2"
-            value="rpet"
-            name="material"
-            autocomplete="off"
-          />
-          <label for="material2">rPET</label>
-
-          <h5>Price</h5>
-          <input
-            type="radio"
-            id="price1"
-            value="cheap"
-            name="price"
-            autocomplete="off"
-          />
-          <label for="price1">DKK 100 - DKK 200</label>
-
-          <input
-            type="radio"
-            id="price2"
-            value="medium"
-            name="price"
-            autocomplete="off"
-          />
-          <label for="price2">DKK 200 - DKK 300</label>
-
-          <button class="remove">Remove all</button>
-        </div>
-
-        <div class="sort-opt">
-          <h5>Material</h5>
-          <div>
+          <div class="c1r2">
             <label for="material1">Vegan leather</label>
             <input
               type="radio"
@@ -295,7 +253,7 @@
             />
           </div>
 
-          <div>
+          <div class="c1r3">
             <label for="material2">rPET</label>
             <input
               type="radio"
@@ -307,7 +265,7 @@
           </div>
 
           <h5>Price</h5>
-          <div>
+          <div class="c2r2">
             <label for="price1">DKK 100 - DKK 200</label>
             <input
               type="radio"
@@ -318,7 +276,7 @@
             />
           </div>
 
-          <div>
+          <div class="c2r3">
             <label for="price2">DKK 200 - DKK 300</label>
             <input
               type="radio"
@@ -329,7 +287,57 @@
             />
           </div>
 
-          <button class="remove">Remove all</button>
+          <button class="remove" id="remove-filter">Remove all</button>
+        </div>
+
+        <div class="sf" id="sort">
+          <h5>Name</h5>
+          <div class="c1r2">
+            <label for="a-z">A to Z</label>
+            <input
+              type="radio"
+              id="a-z"
+              value="a-z"
+              name="name"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="c1r3">
+            <label for="z-a">Z to A</label>
+            <input
+              type="radio"
+              id="z-a"
+              value="z-a"
+              name="name"
+              autocomplete="off"
+            />
+          </div>
+
+          <h5>Price</h5>
+          <div class="c2r2">
+            <label for="l-h">LOW to HIGH</label>
+            <input
+              type="radio"
+              id="l-h"
+              value="l-h"
+              name="price-sort"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="c2r3">
+            <label for="h-l">HIGH to LOW</label>
+            <input
+              type="radio"
+              id="h-l"
+              value="h-l"
+              name="price-sort"
+              autocomplete="off"
+            />
+          </div>
+
+          <button class="remove" id="remove-sort">Remove all</button>
         </div>
 
         <h1>ana are mere</h1>
