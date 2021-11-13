@@ -218,6 +218,7 @@
           <button>
             Sort
             <svg
+              id="arrows"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 90 90"
@@ -285,6 +286,18 @@
               type="radio"
               id="price2"
               value="medium"
+              name="price"
+              onclick="showRemoveFilter();"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="c2r4">
+            <label for="price3">DKK 200 - DKK 300</label>
+            <input
+              type="radio"
+              id="price3"
+              value="high"
               name="price"
               onclick="showRemoveFilter();"
               autocomplete="off"

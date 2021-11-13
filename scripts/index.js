@@ -98,7 +98,7 @@ function removeSf() {
     sortInputs.forEach((e) => {
       if (e.checked) {
         e.checked = false;
-        removeFilter.style.display = "none";
+        removeSort.style.display = "none";
       }
     });
   });
