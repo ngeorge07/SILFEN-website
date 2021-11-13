@@ -44,11 +44,40 @@ function mobileMenu() {
   navMenu.classList.toggle("active");
 }
 
-const navLink = document.querySelectorAll(".nav-link");
+const remove = document.querySelector(".remove");
+remove.addEventListener("click", () => {
+  const inputs = document
+    .querySelector(".filter-opt")
+    .querySelectorAll("input");
+  inputs.forEach((e) => {
+    if (e.checked) {
+      e.checked = false;
+    }
+  });
+});
 
-navLink.forEach((n) => n.addEventListener("click", closeMenu));
+const filterButton = document
+  .querySelector("#options")
+  .querySelector("button:first-of-type");
 
-function closeMenu() {
-  hamburger.classList.remove("active");
-  navMenu.classList.remove("active");
+const sortButton = document
+  .querySelector("#options")
+  .querySelector("button:nth-of-type(2");
+
+filterButton.addEventListener("click", filterOpen);
+
+function filterOpen() {
+  if (document.querySelector(".sort-opt").classList[1] === "active") {
+    document.querySelector(".sort-opt").classList.remove("active");
+  }
+  document.querySelector(".filter-opt").classList.toggle("active");
+}
+
+sortButton.addEventListener("click", sortOpen);
+
+function sortOpen() {
+  if (document.querySelector(".filter-opt").classList[1] === "active") {
+    document.querySelector(".filter-opt").classList.remove("active");
+  }
+  document.querySelector(".sort-opt").classList.toggle("active");
 }
