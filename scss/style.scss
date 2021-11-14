@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Manrope:wght@400;700&family=Roboto:wght@300;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Manrope:wght@400;700&family=Roboto:wght@300;400;500;900&display=swap");
 
 * {
   margin: 0;
@@ -53,7 +53,7 @@ nav {
   align-items: baseline;
   padding: 1.5rem 1.5rem 0 1.5rem;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
 
   background: rgba(255, 255, 255, 0.3);
@@ -205,6 +205,11 @@ h1 {
 
 h2 {
   @include header-font();
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
 }
 
 h5 {
@@ -400,7 +405,7 @@ p {
 /*************ITEMS GRID*************/
 #items-grid {
   margin: 3rem auto 5rem auto;
-  width: 50rem;
+  max-width: 80%;
 }
 
 /********FILTER AND SORT******/
@@ -532,16 +537,63 @@ p {
 /********PRODUCTS IN GRID******/
 #bags {
   display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 5rem;
+  margin-top: 2rem;
 }
 
 .product {
-  button[title="color1"] {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  a:first-of-type {
+    display: grid;
+  }
+
+  > a:first-of-type::before {
+    content: url("../assets/heart.svg");
+    display: block;
+    grid-area: 1 / 1 / 2 / 2;
+    width: 2rem;
+    height: fit-content;
+    justify-self: end;
+    z-index: 1;
+  }
+
+  img {
+    width: 100%;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .product-colors {
+    gap: 0.7rem;
+    display: flex;
+  }
+
+  button {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+  }
+
+  button:first-of-type {
     background: lightblue;
     border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
+    border: 1px solid black;
+  }
+
+  button:nth-of-type(2) {
+    background: hotpink;
+  }
+
+  .product-price {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+  }
+
+  a:hover {
+    color: rgba(0, 0, 0, 0.41);
   }
 }
 
