@@ -27,6 +27,11 @@ a {
   color: black;
 }
 
+button {
+  border: none;
+  background: none;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -521,6 +526,22 @@ p {
       rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
       rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  }
+}
+
+/********PRODUCTS IN GRID******/
+#bags {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.product {
+  button[title="color1"] {
+    background: lightblue;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
   }
 }
 
