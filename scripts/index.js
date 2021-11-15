@@ -117,3 +117,78 @@ function showRemoveSort() {
 burgerMenu();
 sfButtons();
 removeSf();
+
+var names = "Harry";
+var nameArr = names.split(",");
+console.log(nameArr);
+
+function getData() {
+  let url =
+    "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed";
+  fetch(url)
+    .then((response) => response.json())
+    .then(showPosts);
+}
+
+/* <div class="product">
+<a href="#" title="first link">
+  <img src="assets/Pippi String, Cadet, SIDE.jpeg" alt="" />
+</a>
+<div class="product-colors">
+  <button title="color1"></button>
+  <button title="color2"></button>
+</div>
+<h3 class="product-title">
+  <a href="#" title="second link">Crossbody Bag Ulrikke – Winter</a>
+</h3>
+<div class="product-price">DKK 399</div>
+</div> */
+
+function showPosts(e) {
+  console.log(e);
+
+  e.forEach((e) => {
+    const temp = document.querySelector("template").content;
+    const clone = temp.cloneNode(true);
+
+    clone.querySelector("img").src =
+      e._embedded["wp:featuredmedia"][0].source_url;
+    clone.querySelector("img").alt =
+      e._embedded["wp:featuredmedia"][0].alt_text;
+
+    let colors = e.color.split(",");
+
+    function createButtons() {
+      for (i = 0; i < colors.length; i++) {
+        const newButton = document.createElement("button");
+        clone.querySelector(".product-colors").appendChild(newButton);
+      }
+      coloredButtons();
+    }
+    createButtons();
+
+    function coloredButtons() {
+      for (i = 0; i < colors.length; i++) {
+        if (colors.length === 2) {
+          clone.querySelector(
+            "button:first-of-type"
+          ).style.background = `${colors[0]}`;
+          clone.querySelector(
+            "button:nth-of-type(2)"
+          ).style.background = `${colors[1]}`;
+        } else {
+          clone.querySelector(
+            "button:first-of-type"
+          ).style.background = `${colors[0]}`;
+        }
+      }
+    }
+
+    clone.querySelector("h3").textContent = e.title.rendered;
+    clone.querySelector(".product-price").textContent = `DKK ${e.price}`;
+
+    document.querySelector("#bags").appendChild(clone);
+  });
+}
+
+getData();
