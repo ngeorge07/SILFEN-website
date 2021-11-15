@@ -119,7 +119,6 @@ removeSf();
 let url;
 
 function getData(url) {
-  console.log(url);
   fetch(url)
     .then((response) => response.json())
     .then(showPosts);
@@ -181,39 +180,133 @@ function deleteGrid() {
   }
 }
 
-function az() {
-  deleteGrid();
-  url =
-    "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed&orderby=title&order=asc";
-  getData(url);
-  document.querySelector("#a-z").removeEventListener("click", az);
-  document.querySelector("#z-a").addEventListener("click", za);
+function sortAlpha() {
+  function az() {
+    if (document.querySelector("#material1").checked) {
+      console.log("m1 a-z");
+      deleteGrid();
+      url =
+        "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed&categories=4&orderby=title&order=asc";
+      getData(url);
+      document.querySelector("#z-a").addEventListener("click", za);
+    } else if (document.querySelector("#material2").checked) {
+      console.log("m1 a-z");
+      deleteGrid();
+      url =
+        "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed&categories=2&orderby=title&order=asc";
+      getData(url);
+      document.querySelector("#z-a").addEventListener("click", za);
+    } else {
+      deleteGrid();
+      url =
+        "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed&orderby=title&order=asc";
+      getData(url);
+      document.querySelector("#a-z").removeEventListener("click", az);
+      document.querySelector("#z-a").addEventListener("click", za);
+    }
+    document.querySelector("#a-z").removeEventListener("click", az);
+  }
+
+  function za() {
+    if (document.querySelector("#material1").checked) {
+      console.log("m1 z-a");
+      deleteGrid();
+      url =
+        "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed&categories=4&orderby=title&order=desc";
+      getData(url);
+      document.querySelector("#a-z").addEventListener("click", az);
+    } else if (document.querySelector("#material2").checked) {
+      console.log("m1 z-a");
+      deleteGrid();
+      url =
+        "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed&categories=2&orderby=title&order=desc";
+      getData(url);
+      document.querySelector("#a-z").addEventListener("click", az);
+    } else {
+      deleteGrid();
+      url =
+        "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed&orderby=title&order=desc";
+      getData(url);
+      document.querySelector("#z-a").removeEventListener("click", za);
+      document.querySelector("#a-z").addEventListener("click", az);
+    }
+    document.querySelector("#z-a").removeEventListener("click", za);
+  }
+
+  if (!document.querySelector("#z-a").checked) {
+    document.querySelector("#z-a").addEventListener("click", za);
+  }
+
+  if (!document.querySelector("#a-z").checked) {
+    document.querySelector("#a-z").addEventListener("click", az);
+  }
+
+  const removeSort = document.querySelector("#remove-sort");
+  removeSort.addEventListener("click", () => {
+    deleteGrid();
+    url = "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed";
+    getData(url);
+    document.querySelector("#z-a").addEventListener("click", za);
+    document.querySelector("#a-z").addEventListener("click", az);
+  });
 }
 
-function za() {
-  deleteGrid();
-  url =
-    "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed&orderby=title";
-  getData(url);
-  document.querySelector("#z-a").removeEventListener("click", za);
-  document.querySelector("#a-z").addEventListener("click", az);
-}
+function filterMaterial() {
+  if (!document.querySelector("#material1").checked) {
+    document.querySelector("#material1").addEventListener("click", poly);
+  }
+  function poly() {
+    if (document.querySelector("#a-z").checked) {
+      console.log("a-z m1");
+      deleteGrid();
+      url =
+        "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed&categories=4&orderby=title&order=asc";
+      getData(url);
+      document.querySelector("#material2").addEventListener("click", rpet);
+    } else {
+      deleteGrid();
+      url =
+        "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed&categories=4";
+      getData(url);
+      // document.querySelector("#material1").removeEventListener("click", poly);
+      document.querySelector("#material2").addEventListener("click", rpet);
+    }
+    document.querySelector("#material1").removeEventListener("click", poly);
+  }
 
-if (!document.querySelector("#z-a").checked) {
-  document.querySelector("#z-a").addEventListener("click", za);
-}
+  if (!document.querySelector("#material2").checked) {
+    document.querySelector("#material2").addEventListener("click", rpet);
+  }
 
-if (!document.querySelector("#a-z").checked) {
-  document.querySelector("#a-z").addEventListener("click", az);
-}
+  function rpet() {
+    if (document.querySelector("#a-z").checked) {
+      console.log("a-z m2");
+      deleteGrid();
+      url =
+        "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed&categories=2&orderby=title&order=asc";
+      getData(url);
+      document.querySelector("#material1").addEventListener("click", poly);
+    } else {
+      deleteGrid();
+      url =
+        "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed&categories=2";
+      getData(url);
+      // document.querySelector("#material2").removeEventListener("click", rpet);
+      document.querySelector("#material1").addEventListener("click", poly);
+    }
+    document.querySelector("#material2").removeEventListener("click", rpet);
+  }
 
-const removeSort = document.querySelector("#remove-sort");
-removeSort.addEventListener("click", () => {
-  deleteGrid();
-  url = "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed";
-  getData(url);
-  document.querySelector("#z-a").addEventListener("click", za);
-  document.querySelector("#a-z").addEventListener("click", az);
-});
+  const removeFilter = document.querySelector("#remove-filter");
+  removeFilter.addEventListener("click", () => {
+    deleteGrid();
+    url = "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed";
+    getData(url);
+    document.querySelector("#material1").addEventListener("click", poly);
+    document.querySelector("#material2").addEventListener("click", rpet);
+  });
+}
 
 getData("https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed");
+sortAlpha();
+filterMaterial();
