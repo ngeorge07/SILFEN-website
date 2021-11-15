@@ -689,7 +689,7 @@ p {
   display: grid;
   -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 5rem;
+  grid-gap: 7rem;
   margin-top: 2rem;
 }
 
@@ -751,7 +751,7 @@ p {
 .product button:first-of-type {
   background: lightblue;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 .product button:nth-of-type(2) {
