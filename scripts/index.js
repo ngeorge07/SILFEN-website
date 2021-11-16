@@ -1,4 +1,6 @@
-const swiper = new Swiper(".swiper", {
+import burgerMenu from "./burger.js";
+
+const swiper = new Swiper(".index-swiper", {
   // And if we need scrollbar
 
   breakpoints: {
@@ -33,18 +35,6 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-scrollbar",
   },
 });
-
-function burgerMenu() {
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
-
-  hamburger.addEventListener("click", mobileMenu);
-
-  function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-  }
-}
 
 function sfButtons() {
   const filterButton = document

@@ -33,6 +33,11 @@ TABLE OF CONTENTS
   font-weight: 400;
 }
 
+@mixin info {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
 @mixin cta {
   font-family: "Manrope", sans-serif;
   font-weight: 700;
@@ -50,6 +55,11 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+ul {
+  display: flex;
+  list-style: none;
 }
 
 .section-bar {
@@ -110,11 +120,6 @@ nav {
   }
   svg {
     width: 1.3rem;
-  }
-
-  ul {
-    display: flex;
-    list-style: none;
   }
 
   ul:first-of-type {
@@ -293,7 +298,7 @@ nav {
   }
 }
 
-.swiper {
+.index-swiper {
   height: 30rem;
 
   .swiper-slide {
@@ -395,8 +400,7 @@ nav {
     }
 
     div:nth-of-type(2) {
-      font-family: "Roboto", sans-serif;
-      font-weight: 400;
+      @include info();
       grid-area: 3 / 1 / 4 / 3;
     }
 
@@ -779,6 +783,76 @@ footer {
 
     button {
       grid-area: 5 / 1 / -1 / -1;
+    }
+  }
+}
+
+#product-main {
+  display: flex;
+}
+
+#gallery {
+  width: 50%;
+  display: grid;
+  // grid-auto-rows: 2fr 1fr 1fr;
+  // grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 10.55rem);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  img:first-of-type {
+    grid-area: 1 / 1 / 3 / 3;
+  }
+
+  img:nth-of-type(2) {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+
+  img:nth-of-type(3) {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+
+  img:nth-of-type(4) {
+    grid-area: 4 / 1 / 5 / 3;
+  }
+}
+
+#product-content {
+  width: 50%;
+  ul {
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+    a {
+      color: #8a8a8a;
+    }
+  }
+
+  li {
+    @include info();
+    color: #8a8a8a;
+    span {
+      margin: 0 0.5rem;
+    }
+  }
+
+  h1 {
+    margin-top: 2.5rem;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .product-swiper {
+    height: 25rem;
+    .swiper-slide {
+      width: 100%;
+      object-fit: contain;
     }
   }
 }
