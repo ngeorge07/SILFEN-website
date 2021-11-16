@@ -129,20 +129,18 @@ function getData(url) {
 }
 
 function showPosts(e) {
-  const prices = [];
-  for (let x = 0; x < e.length; x++) {
-    prices.push(e[x].price);
-  }
-
+  //attempt to order by price
   if (!document.querySelector("#l-h").checked) {
     document.querySelector("#l-h").addEventListener("click", () => {
-      prices.sort(compare);
+      e.sort(compare);
       deleteGrid();
       getData(
         "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed"
       );
     });
   }
+
+  e.sort(compare);
 
   function compare(a, b) {
     if (a < b) {
@@ -151,7 +149,6 @@ function showPosts(e) {
     if (a > b) {
       return 1;
     }
-    // a must be equal to b
     return 0;
   }
 
