@@ -1,4 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Manrope:wght@400;700&family=Roboto:wght@300;400;500;900&display=swap");
+/*********************************
+TABLE OF CONTENTS
+  01........General Attributes
+  02........Typography
+  03........Header
+  04........Burger Menu
+  05........Main
+  06........Items
+    06.1........Filter and Sort
+    06.2........Bags Grid
+  07........Media Queries
+    07.1........Tablet View
+    07.2........Mobile View
+**********************************/
+/***********GENERAL ATTRIBUTES*********/
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +40,36 @@ button:hover {
   width: 50rem;
   margin: 0 auto 0 auto;
   stroke: #adadad;
+}
+
+/***********TYPOGRAPHY*********/
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+h5 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+p {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
 }
 
 /***********HEADER*********/
@@ -217,35 +262,6 @@ nav #current::after {
 }
 
 /***********MAIN*********/
-h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-size: 2.5rem;
-  text-align: center;
-}
-
-h2 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-}
-
-h5 {
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  font-size: 0.8rem;
-}
-
-p {
-  font-family: "Manrope", sans-serif;
-  font-weight: 400;
-}
-
 #hero-slider {
   display: -ms-grid;
   display: grid;
@@ -654,14 +670,6 @@ p {
   grid-area: 3 / 2 / 4 / 3;
 }
 
-.sf.active .c2r4 {
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-area: 4 / 2 / 5 / 3;
-}
-
 .sf.active button {
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
@@ -905,10 +913,6 @@ p {
         justify-self: end;
   }
   .sf.active .c2r3 {
-    -ms-grid-column-align: end;
-        justify-self: end;
-  }
-  .sf.active .c2r4 {
     -ms-grid-column-align: end;
         justify-self: end;
   }

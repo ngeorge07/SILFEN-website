@@ -137,13 +137,13 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper" style="z-index: 0">
           <!-- Slides -->
-          <a class="swiper-slide" href="#"></a>
-          <a class="swiper-slide" href="#"></a>
-          <a class="swiper-slide" href="#"></a>
-          <a class="swiper-slide" href="#"></a>
-          <a class="swiper-slide" href="#"></a>
-          <a class="swiper-slide" href="#"></a>
-          <a class="swiper-slide" href="#"></a>
+          <a class="swiper-slide" href="#" title="bag1"></a>
+          <a class="swiper-slide" href="#" title="bag2"></a>
+          <a class="swiper-slide" href="#" title="bag3"></a>
+          <a class="swiper-slide" href="#" title="bag4"></a>
+          <a class="swiper-slide" href="#" title="bag5"></a>
+          <a class="swiper-slide" href="#" title="bag6"></a>
+          <a class="swiper-slide" href="#" title="bag7"></a>
         </div>
         <!-- If we need scrollbar -->
         <div class="swiper-scrollbar"></div>
@@ -241,10 +241,10 @@
         <div class="sf" id="filter">
           <h5>MATERIAL</h5>
           <div class="c1r2">
-            <label for="material1">Polyurethane</label>
+            <label for="polyurethane">Polyurethane</label>
             <input
               type="radio"
-              id="material1"
+              id="polyurethane"
               value="vegan"
               name="material"
               onclick="showRemoveFilter();"
@@ -266,10 +266,10 @@
 
           <h5>PRICE</h5>
           <div class="c2r2">
-            <label for="price1">DKK 100 - DKK 200</label>
+            <label for="cheap">DKK 200 - DKK 299</label>
             <input
               type="radio"
-              id="price1"
+              id="cheap"
               value="cheap"
               name="price"
               onclick="showRemoveFilter();"
@@ -278,23 +278,11 @@
           </div>
 
           <div class="c2r3">
-            <label for="price2">DKK 200 - DKK 300</label>
+            <label for="expensive">DKK 300 - DKK 499</label>
             <input
               type="radio"
-              id="price2"
+              id="expensive"
               value="medium"
-              name="price"
-              onclick="showRemoveFilter();"
-              autocomplete="off"
-            />
-          </div>
-
-          <div class="c2r4">
-            <label for="price3">DKK 200 - DKK 300</label>
-            <input
-              type="radio"
-              id="price3"
-              value="high"
               name="price"
               onclick="showRemoveFilter();"
               autocomplete="off"
