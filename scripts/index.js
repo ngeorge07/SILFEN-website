@@ -156,10 +156,9 @@ function showPosts(e) {
     const temp = document.querySelector("template").content;
     const clone = temp.cloneNode(true);
 
-    clone.querySelector("img").src =
-      e._embedded["wp:featuredmedia"][0].source_url;
-    clone.querySelector("img").alt =
-      e._embedded["wp:featuredmedia"][0].alt_text;
+    const imageVar = clone.querySelector("img");
+    imageVar.src = e._embedded["wp:featuredmedia"][0].source_url;
+    imageVar.alt = e._embedded["wp:featuredmedia"][0].alt_text;
 
     let colors = e.color.split(",");
 
@@ -178,11 +177,15 @@ function showPosts(e) {
       button1.addEventListener("click", () => {
         button2.style.border = "none";
         button1.style.border = "2px solid black";
+
+        imageVar.src = e._embedded["wp:featuredmedia"][0].source_url;
       });
 
       button2.addEventListener("click", () => {
         button1.style.border = "none";
         button2.style.border = "2px solid black";
+
+        imageVar.src = e.img.guid;
       });
     } else {
       clone.querySelector(

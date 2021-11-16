@@ -61,6 +61,11 @@ h3 {
   font-weight: 500;
 }
 
+h4 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+}
+
 h5 {
   font-family: "Inter", sans-serif;
   font-weight: 500;
@@ -360,35 +365,35 @@ nav #current::after {
 
 .swiper .swiper-slide:first-of-type,
 .swiper .swiper-slide:nth-of-type(5) {
-  background-image: url("../assets/intro_1.jpg");
+  background-image: url("../assets/intro_1.webp");
   background-size: cover;
   margin-top: -1.2rem;
 }
 
 .swiper .swiper-slide:nth-of-type(2) {
-  background-image: url("../assets/intro_2.jpg");
+  background-image: url("../assets/intro_2.webp");
   background-size: cover;
   margin-top: -3rem;
 }
 
 .swiper .swiper-slide:nth-of-type(3) {
-  background-image: url("../assets/intro_3.jpg");
+  background-image: url("../assets/intro_3.webp");
   background-size: cover;
   margin-top: -2rem;
 }
 
 .swiper .swiper-slide:nth-of-type(4) {
-  background-image: url("../assets/intro_4.jpg");
+  background-image: url("../assets/intro_4.webp");
   background-size: cover;
 }
 
 .swiper .swiper-slide:nth-of-type(6) {
-  background-image: url("../assets/intro_5.jpg");
+  background-image: url("../assets/intro_5.webp");
   background-size: cover;
 }
 
 .swiper .swiper-slide:nth-of-type(7) {
-  background-image: url("../assets/intro_2.jpg");
+  background-image: url("../assets/intro_2.webp");
   background-size: cover;
   margin-top: -2.5rem;
 }
@@ -797,6 +802,45 @@ nav #current::after {
   }
 }
 
+footer {
+  background-color: #4cc9f0;
+  padding: 8rem 4rem;
+}
+
+#newsletter {
+  color: white;
+  width: 36rem;
+}
+
+#newsletter h4 {
+  font-size: 1.7rem;
+  margin-top: 0.5rem;
+}
+
+#newsletter input {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  width: 25rem;
+  height: 3rem;
+  border: none;
+  margin-top: 1.5rem;
+  padding-left: 0.8rem;
+}
+
+#newsletter input:focus-visible {
+  outline: none;
+}
+
+#newsletter button {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  height: 3rem;
+  background-color: white;
+  margin-left: -1rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.41);
+  padding: 0 1.5rem;
+}
+
 /*************TABLET VIEW*************/
 @media only screen and (max-width: 850px) {
   #featured {
@@ -870,6 +914,15 @@ nav #current::after {
   }
   #items-grid {
     max-width: 80%;
+  }
+  footer {
+    padding: 6rem 2rem;
+  }
+  #newsletter {
+    width: 100%;
+  }
+  #newsletter input {
+    width: 70%;
   }
 }
 

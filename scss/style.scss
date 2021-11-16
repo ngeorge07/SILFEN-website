@@ -74,6 +74,10 @@ h3 {
   font-weight: 500;
 }
 
+h4 {
+  @include cta();
+}
+
 h5 {
   font-family: "Inter", sans-serif;
   font-weight: 500;
@@ -299,35 +303,35 @@ nav {
 
   .swiper-slide:first-of-type,
   .swiper-slide:nth-of-type(5) {
-    background-image: url("../assets/intro_1.jpg");
+    background-image: url("../assets/intro_1.webp");
     background-size: cover;
     margin-top: -1.2rem;
   }
 
   .swiper-slide:nth-of-type(2) {
-    background-image: url("../assets/intro_2.jpg");
+    background-image: url("../assets/intro_2.webp");
     background-size: cover;
     margin-top: -3rem;
   }
 
   .swiper-slide:nth-of-type(3) {
-    background-image: url("../assets/intro_3.jpg");
+    background-image: url("../assets/intro_3.webp");
     background-size: cover;
     margin-top: -2rem;
   }
 
   .swiper-slide:nth-of-type(4) {
-    background-image: url("../assets/intro_4.jpg");
+    background-image: url("../assets/intro_4.webp");
     background-size: cover;
   }
 
   .swiper-slide:nth-of-type(6) {
-    background-image: url("../assets/intro_5.jpg");
+    background-image: url("../assets/intro_5.webp");
     background-size: cover;
   }
 
   .swiper-slide:nth-of-type(7) {
-    background-image: url("../assets/intro_2.jpg");
+    background-image: url("../assets/intro_2.webp");
     background-size: cover;
     margin-top: -2.5rem;
   }
@@ -622,6 +626,41 @@ nav {
   }
 }
 
+footer {
+  background-color: #4cc9f0;
+  padding: 8rem 4rem;
+}
+
+#newsletter {
+  color: white;
+  width: 36rem;
+  h4 {
+    font-size: 1.7rem;
+    margin-top: 0.5rem;
+  }
+  input {
+    @include paragraph();
+    width: 25rem;
+    height: 3rem;
+    border: none;
+    margin-top: 1.5rem;
+    padding-left: 0.8rem;
+  }
+
+  input:focus-visible {
+    outline: none;
+  }
+
+  button {
+    @include cta();
+    height: 3rem;
+    background-color: white;
+    margin-left: -1rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.41);
+    padding: 0 1.5rem;
+  }
+}
+
 /*************TABLET VIEW*************/
 @media only screen and (max-width: 850px) {
   #featured {
@@ -693,6 +732,16 @@ nav {
 
   #items-grid {
     max-width: 80%;
+  }
+  footer {
+    padding: 6rem 2rem;
+  }
+
+  #newsletter {
+    width: 100%;
+    input {
+      width: 70%;
+    }
   }
 }
 
