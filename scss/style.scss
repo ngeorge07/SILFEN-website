@@ -891,21 +891,25 @@ footer {
   .product-colors {
     margin-top: 1.5rem;
     align-self: center;
+
+    button {
+      @include colors-button();
+      background: orange;
+    }
   }
 
-  button {
-    @include colors-button();
-    background: orange;
+  button:first-of-type {
+    border: 2px solid black;
   }
 
-  .price {
+  #price {
     @include info();
     align-self: center;
     margin-top: 2.5rem;
     font-size: 1.5rem;
   }
 
-  button:only-of-type {
+  #cart-button {
     @include cta();
     @include cool-button();
     width: 9.5rem;

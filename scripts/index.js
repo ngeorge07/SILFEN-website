@@ -119,29 +119,6 @@ function getData(url) {
 }
 
 function showPosts(e) {
-  //attempt to order by price
-  // if (!document.querySelector("#l-h").checked) {
-  //   document.querySelector("#l-h").addEventListener("click", () => {
-  //     e.sort(compare);
-  //     deleteGrid();
-  //     getData(
-  //       "https://georgendesign.com/silfen-wordpress/wp-json/wp/v2/bag?_embed"
-  //     );
-  //   });
-  // }
-
-  // e.sort(compare);
-
-  // function compare(a, b) {
-  //   if (a < b) {
-  //     return -1;
-  //   }
-  //   if (a > b) {
-  //     return 1;
-  //   }
-  //   return 0;
-  // }
-
   e.forEach((e) => {
     const temp = document.querySelector("template").content;
     const clone = temp.cloneNode(true);
@@ -184,10 +161,23 @@ function showPosts(e) {
     }
 
     clone.querySelector(".product-title").textContent = e.title.rendered;
+
+    clone
+      .querySelector(".product-title")
+      .setAttribute("href", `product.html?id=${e.id}`);
+    clone
+      .querySelector(".image-link")
+      .setAttribute("href", `product.html?id=${e.id}`);
+
     clone.querySelector(".product-price").textContent = `DKK ${e.price}`;
 
     document.querySelector("#bags").appendChild(clone);
   });
+
+  console.log(
+    document.querySelector(".product").querySelector("a:first-of-type")
+  );
+  console.log(document.querySelector("h3").querySelector("a:first-of-type"));
 }
 
 function deleteGrid() {

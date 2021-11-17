@@ -111,11 +111,6 @@
 
     <main id="product-main">
       <div id="gallery">
-        <!-- <img src="assets/intro_3.webp" alt="" /> -->
-        <!-- <img src="assets/intro_5.webp" alt="" /> -->
-        <!-- <img src="assets/intro_4.webp" alt="" /> -->
-        <!-- <img src="assets/intro_1.webp" alt="" /> -->
-
         <img src="assets/product_4.webp" alt="" />
         <img src="assets/product_3.webp" alt="" />
         <img src="assets/product_2.webp" alt="" />
@@ -126,7 +121,7 @@
         <ul>
           <li><a href="#">Home</a></li>
           <li><span>/</span><a href="#">Prom collection</a></li>
-          <li><span>/</span>Crossbody Bag Yrsa</li>
+          <li id="trail-title"><span>/</span>Crossbody Bag Yrsa</li>
         </ul>
 
         <section id="individual-product">
@@ -135,35 +130,19 @@
 
           <div class="swiper product-swiper">
             <div class="swiper-wrapper">
-              <img
-                class="swiper-slide"
-                src="assets/TheaIcymorningFRONT.jpeg"
-                alt=""
-              />
-
-              <img
-                class="swiper-slide"
-                src="assets/TheaIcymorningFRONT.jpeg"
-                alt=""
-              />
-              <img
-                class="swiper-slide"
-                src="assets/TheaIcymorningFRONT.jpeg"
-                alt=""
-              />
+              <img class="swiper-slide" id="front" src="" alt="" />
+              <img class="swiper-slide" id="side" src="" alt="" />
+              <img class="swiper-slide" id="inside" src="" alt="" />
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
           </div>
 
-          <div class="product-colors">
-            <button></button>
-            <button></button>
-          </div>
+          <div class="product-colors"></div>
 
-          <div class="price">DKK 499</div>
+          <div id="price"></div>
 
-          <button>Add to cart</button>
+          <button id="cart-button" title="Add to cart">Add to cart</button>
         </section>
 
         <section id="product-info">
@@ -205,17 +184,7 @@
             </svg>
           </button>
 
-          <p id="description-p" class="hidden">
-            The THEA bag is a sporty, yet sophisticated style by Silfen. Made in
-            recycled polyester with silver metal hardware. The flap and the
-            stitching details gives the bag a uniquely interesting look that
-            stands out. The single handle is adjustable and make the bag perfect
-            for shoulder bag use. THEA comes with recycled polyester lining and
-            an internal pocket. The recycled polyester (rPET) is primarily made
-            of plastic bottles collected from the oceans all over the world.
-            With this bag you can both look your best and keep our planet safe a
-            little more. Strap: Adjustable shoulder strap.
-          </p>
+          <p id="description-p" class="hidden"></p>
 
           <button id="details">
             Details
@@ -256,8 +225,8 @@
           </button>
 
           <div id="details-p" class="hidden">
-            <p id="material-p">Material: 100% rPET</p>
-            <p id="dimension-p">Dimensions: 30*14*9 cm</p>
+            <p id="material-p"></p>
+            <p id="dimension-p"></p>
           </div>
         </section>
 

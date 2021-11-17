@@ -1114,14 +1114,18 @@ footer {
       align-self: center;
 }
 
-#individual-product button {
+#individual-product .product-colors button {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
   background: orange;
 }
 
-#individual-product .price {
+#individual-product button:first-of-type {
+  border: 2px solid black;
+}
+
+#individual-product #price {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   -ms-flex-item-align: center;
@@ -1131,7 +1135,7 @@ footer {
   font-size: 1.5rem;
 }
 
-#individual-product button:only-of-type {
+#individual-product #cart-button {
   font-family: "Manrope", sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
