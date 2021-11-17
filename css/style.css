@@ -1090,6 +1090,11 @@ footer {
      object-fit: contain;
 }
 
+#individual-product .swiper-button-next::after,
+#individual-product .swiper-button-prev::after {
+  color: black;
+}
+
 #individual-product .product-colors {
   margin-top: 1.5rem;
   -ms-flex-item-align: center;
@@ -1162,6 +1167,36 @@ footer {
   color: rgba(0, 0, 0, 0.65);
 }
 
+#icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 3rem;
+}
+
+#icons div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#icons p {
+  margin-top: -0.5rem;
+}
+
+#icons svg {
+  width: 5rem;
+}
+
 @media only screen and (max-width: 795px) {
   #gallery {
     -ms-grid-rows: (0.7fr)[4];
@@ -1198,7 +1233,7 @@ footer {
     font-size: 1rem;
   }
   #product-info p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   #product-info button {
     font-size: 1.2rem;
@@ -1206,10 +1241,11 @@ footer {
   #product-info button svg {
     width: 1.5rem;
   }
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  color: black;
+  #icons svg {
+    width: 3rem;
+  }
+  #icons p {
+    font-size: 0.8rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
