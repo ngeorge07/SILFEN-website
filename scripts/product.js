@@ -72,7 +72,7 @@ function showProduct(e) {
   document.querySelector("#material-p").textContent = `Material: ${e.material}`;
   document.querySelector(
     "#dimension-p"
-  ).textContent = `Dimensions: ${e.dimentions}`;
+  ).textContent = `Dimensions: ${e.dimensions}`;
 }
 
 getData(url);
