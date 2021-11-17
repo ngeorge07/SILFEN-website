@@ -43,6 +43,22 @@ TABLE OF CONTENTS
   font-weight: 700;
 }
 
+@mixin colors-button {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+@mixin cool-button {
+  font-size: 1.1rem;
+  border-radius: 1.5rem;
+  border: none;
+  background-color: #2f4471;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -411,14 +427,7 @@ nav {
 
     button {
       @include cta();
-      font-size: 1.1rem;
-      border-radius: 1.5rem;
-      border: none;
-      background-color: #2f4471;
-      color: white;
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      @include cool-button();
     }
 
     button:active {
@@ -563,6 +572,11 @@ nav {
   margin-top: 2rem;
 }
 
+.product-colors {
+  gap: 0.7rem;
+  display: flex;
+}
+
 .product {
   display: flex;
   flex-direction: column;
@@ -587,15 +601,8 @@ nav {
     grid-area: 1 / 1 / 2 / 2;
   }
 
-  .product-colors {
-    gap: 0.7rem;
-    display: flex;
-  }
-
   button {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
+    @include colors-button();
   }
 
   button:first-of-type {
@@ -789,15 +796,14 @@ footer {
 
 #product-main {
   display: flex;
+  margin-bottom: 5rem;
 }
 
 #gallery {
   width: 50%;
   display: grid;
-  // grid-auto-rows: 2fr 1fr 1fr;
-  // grid-template-columns: 1fr 1fr;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 10.55rem);
+  grid-template-rows: repeat(4, 0.3fr);
 
   img {
     width: 100%;
@@ -824,6 +830,8 @@ footer {
 
 #product-content {
   width: 50%;
+  display: flex;
+  flex-direction: column;
   ul {
     margin-top: 2rem;
     margin-left: 1.5rem;
@@ -839,9 +847,14 @@ footer {
       margin: 0 0.5rem;
     }
   }
+}
 
+#individual-product {
+  display: flex;
+  flex-direction: column;
   h1 {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
+    font-size: 1.7rem;
   }
 
   h3 {
@@ -850,9 +863,115 @@ footer {
 
   .product-swiper {
     height: 25rem;
+    margin: 3rem 2rem 0 2rem;
     .swiper-slide {
       width: 100%;
       object-fit: contain;
+    }
+  }
+
+  .product-colors {
+    margin-top: 1.5rem;
+    align-self: center;
+  }
+
+  button {
+    @include colors-button();
+    background: orange;
+  }
+
+  .price {
+    @include info();
+    align-self: center;
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  button:only-of-type {
+    @include cta();
+    @include cool-button();
+    width: 9.5rem;
+    height: 2.8rem;
+    margin-top: 1rem;
+    align-self: center;
+  }
+}
+
+#product-info {
+  margin: 3rem 2rem 0 2rem;
+  button {
+    @include cta();
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2.6rem;
+
+    svg {
+      width: 2rem;
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+    color: rgba(0, 0, 0, 0.65);
+  }
+}
+
+@media only screen and (max-width: 795px) {
+  #gallery {
+    grid-template-rows: repeat(4, 0.7fr);
+  }
+
+  #product-main {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  #product-content {
+    width: 100%;
+  }
+
+  #gallery {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #product-content {
+    ul {
+      margin-left: 1rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  #individual-product {
+    .product-swiper {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+  }
+
+  #product-info {
+    p {
+      font-size: 0.8rem;
+    }
+
+    button {
+      font-size: 1.2rem;
+
+      svg {
+        width: 1.5rem;
+      }
     }
   }
 }

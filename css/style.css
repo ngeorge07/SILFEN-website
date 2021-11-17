@@ -706,6 +706,13 @@ nav #current::after {
   margin-top: 2rem;
 }
 
+.product-colors {
+  gap: 0.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .product {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -746,13 +753,6 @@ nav #current::after {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-area: 1 / 1 / 2 / 2;
-}
-
-.product .product-colors {
-  gap: 0.7rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .product button {
@@ -978,6 +978,7 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 5rem;
 }
 
 #gallery {
@@ -986,8 +987,8 @@ footer {
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: (10.55rem)[4];
-      grid-template-rows: repeat(4, 10.55rem);
+  -ms-grid-rows: (0.3fr)[4];
+      grid-template-rows: repeat(4, 0.3fr);
 }
 
 #gallery img {
@@ -1031,6 +1032,13 @@ footer {
 
 #product-content {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #product-content ul {
@@ -1052,21 +1060,151 @@ footer {
   margin: 0 0.5rem;
 }
 
-#product-content h1 {
-  margin-top: 2.5rem;
+#individual-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-#product-content h3 {
+#individual-product h1 {
+  margin-top: 2rem;
+  font-size: 1.7rem;
+}
+
+#individual-product h3 {
   text-align: center;
 }
 
-#product-content .product-swiper {
+#individual-product .product-swiper {
   height: 25rem;
+  margin: 3rem 2rem 0 2rem;
 }
 
-#product-content .product-swiper .swiper-slide {
+#individual-product .product-swiper .swiper-slide {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+#individual-product .product-colors {
+  margin-top: 1.5rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#individual-product button {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: orange;
+}
+
+#individual-product .price {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+}
+
+#individual-product button:only-of-type {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 1.5rem;
+  border: none;
+  background-color: #2f4471;
+  color: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  width: 9.5rem;
+  height: 2.8rem;
+  margin-top: 1rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#product-info {
+  margin: 3rem 2rem 0 2rem;
+}
+
+#product-info button {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-top: 2.6rem;
+}
+
+#product-info button svg {
+  width: 2rem;
+}
+
+#product-info p {
+  margin-top: 1rem;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+@media only screen and (max-width: 795px) {
+  #gallery {
+    -ms-grid-rows: (0.7fr)[4];
+        grid-template-rows: repeat(4, 0.7fr);
+  }
+  #product-main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 2rem;
+  }
+  #product-content {
+    width: 100%;
+  }
+  #gallery {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #product-content ul {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+  }
+  #individual-product .product-swiper {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  #individual-product h1 {
+    font-size: 1.5rem;
+  }
+  #individual-product h3 {
+    font-size: 1rem;
+  }
+  #product-info p {
+    font-size: 0.8rem;
+  }
+  #product-info button {
+    font-size: 1.2rem;
+  }
+  #product-info button svg {
+    width: 1.5rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
