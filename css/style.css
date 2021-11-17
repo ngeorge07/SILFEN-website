@@ -22,7 +22,7 @@ TABLE OF CONTENTS
   }
 }
 
-/* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+/* fallback for Firefox (not supporting backdrop-filter) */
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   nav {
     background: white;
@@ -1191,6 +1191,13 @@ footer {
           transform: rotate(-180deg);
 }
 
+.rotate-back {
+  -webkit-animation: 0.3s linear arrow-back;
+          animation: 0.3s linear arrow-back;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
 @-webkit-keyframes arrow-rotate {
   from {
     -webkit-transform: rotate(0deg);
@@ -1210,6 +1217,28 @@ footer {
   to {
     -webkit-transform: rotate(-180deg);
             transform: rotate(-180deg);
+  }
+}
+
+@-webkit-keyframes arrow-back {
+  from {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes arrow-back {
+  from {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 
