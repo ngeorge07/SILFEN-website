@@ -242,6 +242,7 @@ function sortAlpha() {
       document.querySelector("#z-a").addEventListener("click", za);
     }
     document.querySelector("#a-z").removeEventListener("click", az);
+    showRemoveSort();
   }
 
   function za() {
@@ -268,6 +269,7 @@ function sortAlpha() {
       document.querySelector("#a-z").addEventListener("click", az);
     }
     document.querySelector("#z-a").removeEventListener("click", za);
+    showRemoveSort();
   }
 
   if (!document.querySelector("#z-a").checked) {
@@ -326,6 +328,7 @@ function filterMaterial() {
       document.querySelector("#material2").addEventListener("click", rpet);
     }
     document.querySelector("#polyurethane").removeEventListener("click", poly);
+    showRemoveFilter();
   }
 
   if (!document.querySelector("#material2").checked) {
@@ -349,6 +352,7 @@ function filterMaterial() {
       document.querySelector("#polyurethane").addEventListener("click", poly);
     }
     document.querySelector("#material2").removeEventListener("click", rpet);
+    showRemoveFilter();
   }
 
   const removeFilter = document.querySelector("#remove-filter");
