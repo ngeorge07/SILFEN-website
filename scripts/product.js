@@ -9,14 +9,16 @@ function getData(url) {
   fetch(url)
     //receive the json file
     .then((response) => response.json())
-    //run the "showPosts" function that will receive
+    //run the "showProduct" function that will receive
     //the information from the json file and append new elements into our HTML
     .then(showProduct);
 }
 
 function showProduct(e) {
   console.log(e);
-  document.querySelector("#trail-title").textContent = e.title.rendered;
+  document.querySelector(
+    "#trail-title"
+  ).innerHTML = `<span>/<span>${e.title.rendered}`;
   document.querySelector("h1").textContent = e.title.rendered;
 
   const imageVar1 = document.querySelector("#front");
@@ -26,6 +28,10 @@ function showProduct(e) {
   imageVar1.src = e._embedded["wp:featuredmedia"][0].source_url;
   imageVar2.src = e.img2.guid;
   imageVar3.src = e.img3.guid;
+
+  imageVar1.alt = e._embedded["wp:featuredmedia"][0].alt_text;
+  imageVar2.alt = e.img2.post_name;
+  imageVar3.alt = e.img3.post_name;
 
   document.querySelector("#front").alt =
     e._embedded["wp:featuredmedia"][0].alt_text;
@@ -45,6 +51,9 @@ function showProduct(e) {
     button1.style.background = `${colors[0]}`;
     button2.style.background = `${colors[1]}`;
 
+    button1.setAttribute("aria-label", "Color one");
+    button2.setAttribute("aria-label", "Color two");
+
     button1.addEventListener("click", () => {
       button2.style.border = "none";
       button1.style.border = "2px solid black";
@@ -52,20 +61,32 @@ function showProduct(e) {
       imageVar1.src = e._embedded["wp:featuredmedia"][0].source_url;
       imageVar2.src = e.img2.guid;
       imageVar3.src = e.img3.guid;
+
+      imageVar1.alt = e._embedded["wp:featuredmedia"][0].alt_text;
+      imageVar2.alt = e.img2.post_name;
+      imageVar3.alt = e.img3.post_name;
     });
 
     button2.addEventListener("click", () => {
       button1.style.border = "none";
       button2.style.border = "2px solid black";
 
-      imageVar1.src = e.img4.guid;
-      imageVar2.src = e.img5.guid;
-      imageVar3.src = e.img6.guid;
+      imageVar1.src = e.img.guid;
+      imageVar2.src = e.img4.guid;
+      imageVar3.src = e.img5.guid;
+
+      imageVar1.alt = e.img.post_name;
+      imageVar2.alt = e.img4.post_name;
+      imageVar3.alt = e.img5.post_name;
     });
   } else {
     document.querySelector(
       "button:first-of-type"
     ).style.background = `${colors[0]}`;
+
+    document
+      .querySelector("button:first-of-type")
+      .setAttribute("aria-label", "Color");
   }
 
   document.querySelector("#description-p").textContent = e.description;

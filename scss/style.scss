@@ -10,12 +10,16 @@ TABLE OF CONTENTS
   06........Items
     06.1........Filter and Sort
     06.2........Bags Grid
-  07........Media Queries
+  07........Media Queries for index
     07.1........Tablet View
     07.2........Mobile View
+  08........Product page
+  09........Media Queries for product
+    09.1........Tablet View for product
+    09.2........Mobile View for product
 **********************************/
 
-/***********GENERAL ATTRIBUTES*********/
+/***********01 GENERAL ATTRIBUTES*********/
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   nav {
     backdrop-filter: blur(8.3px);
@@ -99,7 +103,7 @@ ul {
   stroke: #adadad;
 }
 
-/***********TYPOGRAPHY*********/
+/***********02 TYPOGRAPHY*********/
 h1 {
   @include header-font();
   text-align: center;
@@ -128,7 +132,7 @@ p {
   @include paragraph();
 }
 
-/***********HEADER*********/
+/***********03 HEADER*********/
 header {
   height: 4.5rem;
 }
@@ -195,7 +199,7 @@ nav {
   width: 100%;
 }
 
-/********BURGER MENU*********/
+/********04 BURGER MENU*********/
 .hamburger {
   display: none;
 }
@@ -276,7 +280,7 @@ nav {
   }
 }
 
-/***********MAIN*********/
+/***********05 MAIN*********/
 #hero-slider {
   display: grid;
   h2 {
@@ -449,13 +453,13 @@ nav {
   }
 }
 
-/*************ITEMS GRID*************/
+/*************06 ITEMS GRID*************/
 #items-grid {
   margin: 3rem auto 5rem auto;
   max-width: 80%;
 }
 
-/********FILTER AND SORT******/
+/********06.1 FILTER AND SORT******/
 #options {
   display: flex;
 
@@ -577,7 +581,7 @@ nav {
   }
 }
 
-/********PRODUCTS IN GRID******/
+/********06.2 PRODUCTS IN GRID******/
 #bags {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -685,7 +689,11 @@ footer {
   }
 }
 
-/*************TABLET VIEW*************/
+/***********************
+07 INDEX MEDIA QUERIES
+************************/
+
+/*************07.1 TABLET VIEW*************/
 @media only screen and (max-width: 850px) {
   #featured {
     width: 40rem;
@@ -714,7 +722,7 @@ footer {
   }
 }
 
-/*************MOBILE VIEW*************/
+/*************07.2 MOBILE VIEW*************/
 @media only screen and (max-width: 685px) {
   #featured {
     display: flex;
@@ -806,6 +814,10 @@ footer {
     }
   }
 }
+
+/***********************
+08 PRODUCT PAGE
+************************/
 
 #product-main {
   display: flex;
@@ -1005,6 +1017,19 @@ footer {
   animation: 0.4s linear slide-top;
 }
 
+/***********************
+09 PRODUCT MEDIA QUERIES
+************************/
+
+/*************09.1 PRODUCT TABLET VIEW*************/
+@media only screen and (max-width: 950px) {
+  #product-content {
+    ul {
+      font-size: 0.8rem;
+    }
+  }
+}
+
 @media only screen and (max-width: 795px) {
   #gallery {
     grid-template-rows: repeat(4, 0.7fr);
@@ -1024,6 +1049,7 @@ footer {
   }
 }
 
+/*************09.2 PRODUCT MOBILE VIEW*************/
 @media only screen and (max-width: 550px) {
   #product-content {
     ul {

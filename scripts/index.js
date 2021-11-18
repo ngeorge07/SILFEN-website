@@ -126,6 +126,10 @@ function showPosts(e) {
     const imageVar = clone.querySelector("img");
     imageVar.src = e._embedded["wp:featuredmedia"][0].source_url;
     imageVar.alt = e._embedded["wp:featuredmedia"][0].alt_text;
+    imageVar.setAttribute(
+      "aria-label",
+      `See more details about ${e.title.rendered}`
+    );
 
     let colors = e.color.split(",");
 
@@ -141,6 +145,9 @@ function showPosts(e) {
       button1.style.background = `${colors[0]}`;
       button2.style.background = `${colors[1]}`;
 
+      button1.setAttribute("aria-label", "Color 1");
+      button2.setAttribute("aria-label", "Color 2");
+
       button1.addEventListener("click", () => {
         button2.style.border = "none";
         button1.style.border = "2px solid black";
@@ -155,12 +162,18 @@ function showPosts(e) {
         imageVar.src = e.img.guid;
       });
     } else {
+      clone
+        .querySelector("button:first-of-type")
+        .setAttribute("aria-label", "Color 1");
       clone.querySelector(
         "button:first-of-type"
       ).style.background = `${colors[0]}`;
     }
 
     clone.querySelector(".product-title").textContent = e.title.rendered;
+    clone
+      .querySelector(".product-title")
+      .setAttribute("aria-label", `See more details about ${e.title.rendered}`);
 
     clone
       .querySelector(".product-title")
